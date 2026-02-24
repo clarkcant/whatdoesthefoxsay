@@ -2,7 +2,7 @@ name: INTEGRATION
 
 on:
   push:
-    branches: [ develop ]
+    branches: [ dev ]
 
 jobs:
   Backend:
