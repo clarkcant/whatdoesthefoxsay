@@ -1,0 +1,28 @@
+name: Delivery - Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  Display_Data:
+    runs-on: ubuntu-latest
+    steps:
+      - run: env | sort
+
+  Build_Push_Docker:
+    uses: ./.github/workflows/delivery.yml
+    secrets: inherit
+    permissions:
+      contents: read
+      packages: write
+
+  #------------------------------
+
+  Deploy:
+    needs: [Build_Push_Docker]
+    uses: ./.github/workflows/deploy.yml
+    secrets: inherit
+    permissions:
+      id-token: write
