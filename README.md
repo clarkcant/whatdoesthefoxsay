@@ -1,4 +1,4 @@
-# Documentation Cocktail ClicBoumPaf
+# Documentation Cocktail ClicBoumPaf et patatra tout est en carafe
 
 Documentation complète du projet Cocktail ClicBoumPaf générée avec MkDocs Material.
 
