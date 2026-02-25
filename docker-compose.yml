@@ -6,10 +6,10 @@ services:
     volumes:
       - cocktail_volume:/var/lib/mysql
     environment:
-      MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
-      MARIADB_DATABASE: ${MARIADB_DATABASE}
-      MARIADB_USER: ${MARIADB_USER}
-      MARIADB_PASSWORD: ${MARIADB_PASSWORD}
+      MARIADB_ROOT_PASSWORD: toor
+      MARIADB_DATABASE: bddname
+      MARIADB_USER: roger
+      MARIADB_PASSWORD: regor
     healthcheck:
       test: ['CMD', '/usr/local/bin/healthcheck.sh', '--innodb_initialized']
       start_period: 5s
@@ -28,6 +28,9 @@ services:
     environment:
       BDD_HOST: cocktail_bdd
       BDD_PORT: 3306
+      BDD_NAME: bddname
+      BDD_USER: roger
+      BDD_PASS: regor
     depends_on:
       cocktail_bdd:
         condition: service_healthy
